@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>G-FIT | Ropa Deportiva Femenina Premium</title>
+  <meta name="description" content="G-FIT – Tu tienda de ropa deportiva femenina. Leggings, tops, conjuntos, shorts y más. Envíos a todo Colombia." />
+  <meta property="og:title" content="G-FIT | Ropa Deportiva Femenina Premium" />
+  <meta property="og:description" content="Descubre la colección G-FIT. Moda deportiva femenina con estilo, calidad y confort." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo/LOGO.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header class="site-header" id="siteHeader" role="banner">
+  <div class="header-top">
+    <span>🚚 Envío gratis en compras mayores a $150.000</span>
+    <span>Pago seguro • Devoluciones fáciles • Atención 24/7</span>
+  </div>
+
+  <div class="header-main">
+    <!-- Logo -->
+    <a href="index.html" class="header-logo" aria-label="G-FIT inicio">
+      <img src="LOGO.png" alt="G-FIT Logo" width="80" height="80" />
+    </a>
+
+    <!-- Search -->
+    <div class="header-search" role="search">
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Buscar leggings, tops, conjuntos..."
+        aria-label="Buscar productos"
+        autocomplete="off"
+      />
+      <button class="search-btn" aria-label="Buscar" onclick="performSearch()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <div class="search-suggestions" id="searchSuggestions" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+    </div>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <button class="action-btn" aria-label="Mi cuenta" onclick="toggleAccount()">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span class="action-label">Cuenta</span>
+      </button>
+      <button class="action-btn" aria-label="Favoritos" onclick="showFavorites()">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="action-label">Favoritos</span>
+        <span class="badge" id="favBadge">0</span>
+      </button>
+      <button class="action-btn cart-btn" aria-label="Carrito de compras" onclick="toggleCart()">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="action-label">Carrito</span>
+        <span class="badge cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Nav Categories -->
+  <nav class="header-nav" aria-label="Categorías principales">
+    <ul class="nav-list" role="list">
+      <li><a href="#" class="nav-link active" data-category="all">Todo</a></li>
+      <li><a href="#" class="nav-link" data-category="leggings">Leggings</a></li>
+      <li><a href="#" class="nav-link" data-category="tops">Tops Deportivos</a></li>
+      <li><a href="#" class="nav-link" data-category="conjuntos">Conjuntos</a></li>
+      <li><a href="#" class="nav-link" data-category="shorts">Shorts</a></li>
+      <li><a href="#" class="nav-link" data-category="chaquetas">Chaquetas</a></li>
+      <li><a href="#" class="nav-link" data-category="sudaderas">Sudaderas</a></li>
+      <li><a href="#" class="nav-link" data-category="running">Ropa Running</a></li>
+      <li><a href="#" class="nav-link" data-category="gym">Ropa Gym</a></li>
+      <li><a href="#" class="nav-link" data-category="accesorios">Accesorios</a></li>
+      <li><a href="#" class="nav-link new-tag" data-category="nuevos">Nuevos ✨</a></li>
+      <li><a href="#" class="nav-link offer-tag" data-category="ofertas">Ofertas 🔥</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================ -->
+<main id="mainContent">
+
+  <!-- ===== HERO BANNER ===== -->
+  <section class="hero-section" id="heroSection" aria-label="Banner principal">
+    <div class="hero-slider" id="heroSlider">
+
+      <div class="hero-slide active">
+        <div class="hero-bg" style="background: linear-gradient(135deg, #1a0a14 0%, #2d1126 40%, #3d1a35 100%);">
+          <div class="hero-pattern"></div>
+        </div>
+        <div class="hero-content">
+          <span class="hero-tag">Nueva Colección 2025</span>
+          <h1 class="hero-title">Entrena con<br/><em>Estilo & Poder</em></h1>
+          <p class="hero-subtitle">Ropa deportiva femenina diseñada para quienes van más allá de sus límites</p>
+          <div class="hero-actions">
+            <button class="btn-primary" onclick="scrollToProducts()">Ver Colección</button>
+            <button class="btn-ghost" onclick="filterByCategory('nuevos')">Nuevos Ingresos</button>
+          </div>
+        </div>
+        <div class="hero-image-area">
+          <div class="hero-glow"></div>
+          <div class="hero-circle-deco"></div>
+        </div>
+      </div>
+
+      <div class="hero-slide">
+        <div class="hero-bg" style="background: linear-gradient(135deg, #0d0d0d 0%, #1a0a14 50%, #2a1020 100%);">
+          <div class="hero-pattern"></div>
+        </div>
+        <div class="hero-content">
+          <span class="hero-tag offer-glow">Hasta 40% OFF</span>
+          <h1 class="hero-title">Ofertas<br/><em>Imperdibles</em></h1>
+          <p class="hero-subtitle">Conjuntos, leggings y tops con descuentos exclusivos esta semana</p>
+          <div class="hero-actions">
+            <button class="btn-primary" onclick="filterByCategory('ofertas')">Ver Ofertas</button>
+            <button class="btn-ghost" onclick="filterByCategory('conjuntos')">Conjuntos</button>
+          </div>
+        </div>
+        <div class="hero-image-area">
+          <div class="hero-glow offer-glow-2"></div>
+          <div class="hero-circle-deco"></div>
+        </div>
+      </div>
+
+      <div class="hero-slide">
+        <div class="hero-bg" style="background: linear-gradient(135deg, #12000e 0%, #200016 50%, #300020 100%);">
+          <div class="hero-pattern"></div>
+        </div>
+        <div class="hero-content">
+          <span class="hero-tag">Best Sellers</span>
+          <h1 class="hero-title">Lo Más<br/><em>Amado</em></h1>
+          <p class="hero-subtitle">Los productos más elegidos por la comunidad G-FIT</p>
+          <div class="hero-actions">
+            <button class="btn-primary" onclick="showBestSellers()">Ver Top Ventas</button>
+            <button class="btn-ghost" onclick="filterByCategory('leggings')">Leggings</button>
+          </div>
+        </div>
+        <div class="hero-image-area">
+          <div class="hero-glow pink-glow"></div>
+          <div class="hero-circle-deco"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Slider Controls -->
+    <button class="hero-prev" aria-label="Anterior" onclick="changeSlide(-1)">&#8249;</button>
+    <button class="hero-next" aria-label="Siguiente" onclick="changeSlide(1)">&#8250;</button>
+    <div class="hero-dots" id="heroDots" role="tablist" aria-label="Slides del banner">
+      <button class="hero-dot active" role="tab" aria-label="Slide 1" onclick="goToSlide(0)"></button>
+      <button class="hero-dot" role="tab" aria-label="Slide 2" onclick="goToSlide(1)"></button>
+      <button class="hero-dot" role="tab" aria-label="Slide 3" onclick="goToSlide(2)"></button>
+    </div>
+  </section>
+
+  <!-- ===== BENEFITS BAR ===== -->
+  <section class="benefits-bar" aria-label="Beneficios de compra">
+    <div class="benefits-container">
+      <div class="benefit-item">
+        <span class="benefit-icon" aria-hidden="true">🚚</span>
+        <div>
+          <strong>Envío Gratis</strong>
+          <span>Compras +$150.000</span>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon" aria-hidden="true">🔒</span>
+        <div>
+          <strong>Pago Seguro</strong>
+          <span>100% protegido</span>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon" aria-hidden="true">↩️</span>
+        <div>
+          <strong>Devoluciones</strong>
+          <span>30 días sin preguntas</span>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon" aria-hidden="true">💬</span>
+        <div>
+          <strong>Soporte 24/7</strong>
+          <span>Siempre disponibles</span>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon" aria-hidden="true">⭐</span>
+        <div>
+          <strong>Calidad Premium</strong>
+          <span>+2000 reseñas 5★</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORY CARDS ===== -->
+  <section class="categories-section section-padding" aria-label="Categorías destacadas">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Explora por Categoría</h2>
+        <p class="section-subtitle">Encuentra exactamente lo que buscas</p>
+      </div>
+      <div class="categories-grid">
+        <div class="cat-card" onclick="filterByCategory('leggings')" role="button" tabindex="0" aria-label="Ver Leggings">
+          <div class="cat-icon">🩱</div>
+          <span>Leggings</span>
+        </div>
+        <div class="cat-card" onclick="filterByCategory('tops')" role="button" tabindex="0" aria-label="Ver Tops">
+          <div class="cat-icon">👚</div>
+          <span>Tops</span>
+        </div>
+        <div class="cat-card" onclick="filterByCategory('conjuntos')" role="button" tabindex="0" aria-label="Ver Conjuntos">
+          <div class="cat-icon">👗</div>
+          <span>Conjuntos</span>
+        </div>
+        <div class="cat-card" onclick="filterByCategory('shorts')" role="button" tabindex="0" aria-label="Ver Shorts">
+          <div class="cat-icon">🩳</div>
+          <span>Shorts</span>
+        </div>
+        <div class="cat-card" onclick="filterByCategory('chaquetas')" role="button" tabindex="0" aria-label="Ver Chaquetas">
+          <div class="cat-icon">🧥</div>
+          <span>Chaquetas</span>
+        </div>
+        <div class="cat-card" onclick="filterByCategory('running')" role="button" tabindex="0" aria-label="Ver Running">
+          <div class="cat-icon">🏃‍♀️</div>
+          <span>Running</span>
+        </div>
+        <div class="cat-card" onclick="filterByCategory('gym')" role="button" tabindex="0" aria-label="Ver Gym">
+          <div class="cat-icon">🏋️‍♀️</div>
+          <span>Gym</span>
+        </div>
+        <div class="cat-card" onclick="filterByCategory('accesorios')" role="button" tabindex="0" aria-label="Ver Accesorios">
+          <div class="cat-icon">🎒</div>
+          <span>Accesorios</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCT CATALOG ===== -->
+  <section class="catalog-section section-padding" id="catalogSection" aria-label="Catálogo de productos">
+    <div class="container">
+      <div class="catalog-layout">
+
+        <!-- Sidebar Filters -->
+        <aside class="filters-sidebar" id="filtersSidebar" aria-label="Filtros de productos">
+          <div class="filters-header">
+            <h3>Filtros</h3>
+            <button class="clear-filters-btn" onclick="clearFilters()">Limpiar todo</button>
+          </div>
+
+          <!-- Price Filter -->
+          <div class="filter-group">
+            <h4 class="filter-title">Precio</h4>
+            <div class="price-inputs">
+              <div class="price-input-wrap">
+                <label for="priceMin">Mínimo</label>
+                <input type="number" id="priceMin" placeholder="$0" min="0" aria-label="Precio mínimo" />
+              </div>
+              <span class="price-separator">—</span>
+              <div class="price-input-wrap">
+                <label for="priceMax">Máximo</label>
+                <input type="number" id="priceMax" placeholder="$500.000" min="0" aria-label="Precio máximo" />
+              </div>
+            </div>
+            <button class="apply-price-btn" onclick="applyPriceFilter()">Aplicar</button>
+          </div>
+
+          <!-- Size Filter -->
+          <div class="filter-group">
+            <h4 class="filter-title">Talla</h4>
+            <div class="size-filter-grid">
+              <label class="size-filter-label">
+                <input type="checkbox" value="XS" class="size-checkbox" onchange="applyFilters()" />
+                <span>XS</span>
+              </label>
+              <label class="size-filter-label">
+                <input type="checkbox" value="S" class="size-checkbox" onchange="applyFilters()" />
+                <span>S</span>
+              </label>
+              <label class="size-filter-label">
+                <input type="checkbox" value="M" class="size-checkbox" onchange="applyFilters()" />
+                <span>M</span>
+              </label>
+              <label class="size-filter-label">
+                <input type="checkbox" value="L" class="size-checkbox" onchange="applyFilters()" />
+                <span>L</span>
+              </label>
+              <label class="size-filter-label">
+                <input type="checkbox" value="XL" class="size-checkbox" onchange="applyFilters()" />
+                <span>XL</span>
+              </label>
+              <label class="size-filter-label">
+                <input type="checkbox" value="XXL" class="size-checkbox" onchange="applyFilters()" />
+                <span>XXL</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Rating Filter -->
+          <div class="filter-group">
+            <h4 class="filter-title">Valoración mínima</h4>
+            <div class="rating-filters">
+              <label class="rating-filter-label">
+                <input type="radio" name="ratingFilter" value="4.5" onchange="applyFilters()" />
+                <span>⭐⭐⭐⭐⭐ 4.5+</span>
+              </label>
+              <label class="rating-filter-label">
+                <input type="radio" name="ratingFilter" value="4.0" onchange="applyFilters()" />
+                <span>⭐⭐⭐⭐ 4.0+</span>
+              </label>
+              <label class="rating-filter-label">
+                <input type="radio" name="ratingFilter" value="3.0" onchange="applyFilters()" />
+                <span>⭐⭐⭐ 3.0+</span>
+              </label>
+              <label class="rating-filter-label">
+                <input type="radio" name="ratingFilter" value="0" onchange="applyFilters()" checked />
+                <span>Todas</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Discount Filter -->
+          <div class="filter-group">
+            <h4 class="filter-title">Descuentos</h4>
+            <label class="checkbox-label">
+              <input type="checkbox" id="onlyDiscounts" onchange="applyFilters()" />
+              <span>Solo productos en oferta</span>
+            </label>
+          </div>
+
+          <!-- Availability -->
+          <div class="filter-group">
+            <h4 class="filter-title">Disponibilidad</h4>
+            <label class="checkbox-label">
+              <input type="checkbox" id="onlyAvailable" checked onchange="applyFilters()" />
+              <span>Solo disponibles</span>
+            </label>
+          </div>
+        </aside>
+
+        <!-- Products Area -->
+        <div class="catalog-main">
+          <!-- Catalog Toolbar -->
+          <div class="catalog-toolbar">
+            <div class="catalog-section-tabs">
+              <button class="section-tab active" data-section="featured" onclick="setSectionTab(this,'featured')">Destacados</button>
+              <button class="section-tab" data-section="bestsellers" onclick="setSectionTab(this,'bestsellers')">Más Vendidos</button>
+              <button class="section-tab" data-section="new" onclick="setSectionTab(this,'new')">Nuevos</button>
+              <button class="section-tab" data-section="offers" onclick="setSectionTab(this,'offers')">Ofertas</button>
+            </div>
+            <div class="catalog-controls">
+              <span class="results-count" id="resultsCount">20 productos</span>
+              <label for="sortSelect" class="sr-only">Ordenar por</label>
+              <select id="sortSelect" class="sort-select" aria-label="Ordenar productos" onchange="applyFilters()">
+                <option value="default">Relevancia</option>
+                <option value="price-asc">Menor precio</option>
+                <option value="price-desc">Mayor precio</option>
+                <option value="rating">Mejor valorados</option>
+                <option value="discount">Mayor descuento</option>
+              </select>
+              <button class="filter-toggle-btn" aria-label="Mostrar filtros" onclick="toggleFilters()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="12" y1="18" x2="20" y2="18"/></svg>
+                Filtros
+              </button>
+            </div>
+          </div>
+
+          <!-- Products Grid -->
+          <div class="products-grid" id="productsGrid" role="list" aria-label="Lista de productos">
+            <!-- Products injected by JS -->
+          </div>
+
+          <!-- Pagination -->
+          <div class="pagination" id="pagination" role="navigation" aria-label="Paginación de productos">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials-section section-padding" aria-label="Testimonios de clientes">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Lo que dicen nuestras clientas</h2>
+        <p class="section-subtitle">+2000 reseñas verificadas</p>
+      </div>
+      <div class="testimonials-grid">
+        <article class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
+          <blockquote>"Los leggings G-FIT son increíbles. La tela es suave, no se transparentan y aguantan sesiones intensas de crossfit. Ya compré 3 pares."</blockquote>
+          <cite class="testimonial-author">
+            <span class="author-avatar" aria-hidden="true">👩‍🦱</span>
+            <div>
+              <strong>Laura M.</strong>
+              <span>Bogotá, Colombia</span>
+            </div>
+          </cite>
+        </article>
+        <article class="testimonial-card featured-testimonial">
+          <div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
+          <blockquote>"Me encantó el conjunto deportivo. La entrega fue rápida y el empaque muy bonito. Definitivamente vuelvo a comprar. Recomendadas 100%."</blockquote>
+          <cite class="testimonial-author">
+            <span class="author-avatar" aria-hidden="true">👩‍🦰</span>
+            <div>
+              <strong>Valentina R.</strong>
+              <span>Medellín, Colombia</span>
+            </div>
+          </cite>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-stars" aria-label="4 estrellas">★★★★★</div>
+          <blockquote>"Los tops tienen un fit perfecto, no se mueven durante el ejercicio. La calidad es premium y el precio es muy justo. Súper recomendadas."</blockquote>
+          <cite class="testimonial-author">
+            <span class="author-avatar" aria-hidden="true">👩‍🦳</span>
+            <div>
+              <strong>Camila P.</strong>
+              <span>Cali, Colombia</span>
+            </div>
+          </cite>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     PRODUCT DETAIL OVERLAY
+============================================================ -->
+<div class="product-detail-overlay" id="productDetailOverlay" role="dialog" aria-modal="true" aria-label="Detalle del producto">
+  <div class="product-detail-container" id="productDetailContainer">
+    <!-- Injected by JS -->
+  </div>
+  <button class="overlay-close-btn" onclick="closeProductDetail()" aria-label="Cerrar detalle">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+</div>
+
+<!-- ============================================================
+     CART SIDEBAR
+============================================================ -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()" aria-hidden="true"></div>
+<aside class="cart-sidebar" id="cartSidebar" role="complementary" aria-label="Carrito de compras">
+  <div class="cart-header">
+    <h2>Tu Carrito</h2>
+    <button class="cart-close-btn" onclick="toggleCart()" aria-label="Cerrar carrito">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <!-- Injected by cart.js -->
+  </div>
+  <div class="cart-footer" id="cartFooter">
+    <!-- Injected by cart.js -->
+  </div>
+</aside>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="LOGO.png" alt="G-FIT" width="70" height="70" />
+          <p>Ropa deportiva femenina premium para quienes no conocen los límites.</p>
+          <div class="social-links" aria-label="Redes sociales">
+            <a href="#" aria-label="Instagram G-FIT" class="social-link">📷</a>
+            <a href="#" aria-label="Facebook G-FIT" class="social-link">👍</a>
+            <a href="#" aria-label="TikTok G-FIT" class="social-link">🎵</a>
+            <a href="#" aria-label="YouTube G-FIT" class="social-link">▶️</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Categorías</h4>
+          <ul>
+            <li><a href="#" onclick="filterByCategory('leggings')">Leggings</a></li>
+            <li><a href="#" onclick="filterByCategory('tops')">Tops Deportivos</a></li>
+            <li><a href="#" onclick="filterByCategory('conjuntos')">Conjuntos</a></li>
+            <li><a href="#" onclick="filterByCategory('shorts')">Shorts</a></li>
+            <li><a href="#" onclick="filterByCategory('chaquetas')">Chaquetas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Información</h4>
+          <ul>
+            <li><a href="#">Sobre G-FIT</a></li>
+            <li><a href="#">Guía de Tallas</a></li>
+            <li><a href="#">Envíos y Devoluciones</a></li>
+            <li><a href="#">Preguntas Frecuentes</a></li>
+            <li><a href="#">Blog Fitness</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li>📧 hola@gfit.co</li>
+            <li>📞 +57 300 000 0000</li>
+            <li>📍 Colombia</li>
+            <li>⏰ Lun–Sab 8am–8pm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2025 G-FIT. Todos los derechos reservados.</p>
+      <div class="payment-methods" aria-label="Métodos de pago">
+        <span title="Visa">💳</span>
+        <span title="Mastercard">💳</span>
+        <span title="PSE">🏦</span>
+        <span title="Efecty">💵</span>
+        <span title="Nequi">📱</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     FLOATING CHAT BUTTON
+============================================================ -->
+<div class="chat-float" id="chatFloat" role="complementary" aria-label="Chat de soporte">
+  <button class="chat-trigger-btn" onclick="toggleChat()" aria-label="Abrir chat de soporte">
+    <span class="chat-online-dot" aria-hidden="true"></span>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <span class="chat-tooltip">¿Necesitas ayuda?</span>
+  </button>
+
+  <!-- Chat Window -->
+  <div class="chat-window" id="chatWindow" role="dialog" aria-modal="true" aria-label="Chat de soporte G-FIT" hidden>
+    <div class="chat-window-header">
+      <div class="chat-agent-info">
+        <div class="agent-avatar" aria-hidden="true">👩‍💼</div>
+        <div>
+          <strong>Soporte G-FIT</strong>
+          <span class="agent-status">En línea ahora</span>
+        </div>
+      </div>
+      <button class="chat-window-close" onclick="toggleChat()" aria-label="Cerrar chat">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-label="Mensajes del chat">
+      <div class="chat-msg agent-msg">
+        <div class="msg-bubble">¡Hola! 👋 Soy la asistente de G-FIT. ¿En qué puedo ayudarte hoy?</div>
+        <span class="msg-time">Ahora</span>
+      </div>
+    </div>
+    <div class="chat-quick-replies" id="chatQuickReplies">
+      <button onclick="sendQuickReply('Ver tallas disponibles')">📏 Tallas</button>
+      <button onclick="sendQuickReply('Información de envíos')">🚚 Envíos</button>
+      <button onclick="sendQuickReply('Ayuda con mi pedido')">📦 Mi Pedido</button>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="chatInput" placeholder="Escribe tu mensaje..." aria-label="Mensaje de chat" onkeydown="handleChatKeydown(event)" />
+      <button class="chat-send-btn" onclick="sendChatMessage()" aria-label="Enviar mensaje">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     TOAST NOTIFICATION
+============================================================ -->
+<div class="toast-container" id="toastContainer" aria-live="assertive" role="status"></div>
+
+<!-- ============================================================
+     SCRIPTS
+============================================================ -->
+<script src="products.js"></script>
+  <script src="cart.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
