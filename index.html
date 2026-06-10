@@ -110,8 +110,7 @@
           </div>
         </div>
         <div class="hero-image-area">
-          <div class="hero-glow"></div>
-          <div class="hero-circle-deco"></div>
+          <img src="img/Banner1.jpg" alt="Coleccion G-Fit">
         </div>
       </div>
 
@@ -129,8 +128,7 @@
           </div>
         </div>
         <div class="hero-image-area">
-          <div class="hero-glow offer-glow-2"></div>
-          <div class="hero-circle-deco"></div>
+          <img src="img/Banner2.jpg" alt="Ofertas G-Fit">
         </div>
       </div>
 
@@ -148,8 +146,7 @@
           </div>
         </div>
         <div class="hero-image-area">
-          <div class="hero-glow pink-glow"></div>
-          <div class="hero-circle-deco"></div>
+          <img src="img/Banner3.jpg" alt="Best Sellers G-Fit">
         </div>
       </div>
 
@@ -587,7 +584,53 @@
 ============================================================ -->
 <script src="products.js"></script>
   <script src="cart.js"></script>
-  <script src="app.js"></script>
+  <script src="slider.js"></script>
 
+  <script>
+
+let currentSlide = 0;
+
+const slides = document.querySelectorAll(".hero-slide");
+const dots = document.querySelectorAll(".hero-dot");
+
+function showSlide(index){
+
+    slides.forEach(slide=>{
+        slide.classList.remove("active");
+    });
+
+    dots.forEach(dot=>{
+        dot.classList.remove("active");
+    });
+
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");
+
+}
+
+function changeSlide(direction){
+
+    currentSlide += direction;
+
+    if(currentSlide >= slides.length){
+        currentSlide = 0;
+    }
+
+    if(currentSlide < 0){
+        currentSlide = slides.length - 1;
+    }
+
+    showSlide(currentSlide);
+
+}
+
+function goToSlide(index){
+
+    currentSlide = index;
+    showSlide(currentSlide);
+
+}
+
+</script>
 </body>
 </html>
