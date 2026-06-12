@@ -25,7 +25,12 @@ const PRODUCTS = [
     sizes: ['XS','S','M','L','XL','XXL'],
     color: 'Negro / Rosado',
     material: '75% Poliéster, 20% Nylon, 5% Elastano',
-    emoji: '🩱',
+    images:[
+      'img/leggins.jpg',
+      'img/leggins1.2.jpg',
+      'img/leggins1.3.jpg',
+      'img/leggins1.4.jpg'
+    ],
     colorHex: '#1a0a14',
     description: 'Legging de compresión alta con tecnología Sculpt que moldea y define tu silueta. Cintura alta ergonómica que ofrece soporte abdominal y un fit perfecto para todo tipo de actividad física.',
     specs: {
@@ -695,9 +700,14 @@ function renderStars(rating) {
 /* ============================================================
    HELPER: Generate gradient placeholder SVG
 ============================================================ */
-function generatePlaceholder(product) {
-  const hex = product.colorHex || '#1a0a14';
-  return `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='${encodeURIComponent(hex)}'/%3E%3Cstop offset='100%25' stop-color='%231a0a14'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='500' fill='url(%23g)'/%3E%3Ctext x='200' y='220' text-anchor='middle' font-size='80' fill='rgba(255,255,255,0.15)'%3E${encodeURIComponent(product.emoji)}%3C/text%3E%3Ctext x='200' y='290' text-anchor='middle' font-size='14' fill='rgba(255,255,255,0.3)' font-family='sans-serif'%3EG-FIT%3C/text%3E%3C/svg%3E`;
+function generatePlaceholder(product){
+
+    if(product.images && product.images.length > 0){
+        return product.images[0];
+    }
+
+    return 'img/no-image.jpg';
+
 }
 
 /* ============================================================
@@ -1002,13 +1012,18 @@ function openProductDetail(productId) {
    RENDER PRODUCT DETAIL
 ============================================================ */
 function renderProductDetail(product) {
-  const imgSrc = generatePlaceholder(product);
-  const imgs = [imgSrc, imgSrc, imgSrc, imgSrc]; // Repeated for demo
+  const imgs = product.images && product.images.length > 0
+  ? product.images
+  : [generatePlaceholder(product)]; // Repeated for demo
 
   const thumbsHTML = imgs.map((src, i) => `
-    <div class="gallery-thumb ${i === 0 ? 'active' : ''}" onclick="switchMainImg(this, '${src}')" aria-label="Imagen ${i+1}">
-      <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--color-bg-3);font-size:2rem;">${product.emoji}</div>
-    </div>`).join('');
+<div class="gallery-thumb ${i === 0 ? 'active' : ''}"
+     onclick="switchMainImg(this, '${src}')"
+     aria-label="Imagen ${i + 1}">
+     
+     <img src="${src}" alt="${product.name}">
+     
+</div>`).join('');
 
   const sizesHTML = product.sizes.map(size =>
     `<button class="size-option" data-size="${size}" onclick="selectSize(this)" aria-label="Talla ${size}">${size}</button>`
