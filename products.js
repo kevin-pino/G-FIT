@@ -898,9 +898,11 @@ function renderProductCard(product) {
   return `
     <article class="product-card" role="listitem" onclick="openProductDetail(${product.id})" aria-label="${product.name}">
       <div class="product-img-wrap">
-        <div class="product-img-placeholder" aria-hidden="true">
-          <span class="placeholder-icon">${product.emoji}</span>
-          <span>G-FIT</span>
+        <div class="product-img-wrap">
+          <img
+          class="product-img"
+          src="${imgSrc}"
+          alt="${product.name}">
         </div>
         ${discountBadge}
         <button
@@ -1064,7 +1066,11 @@ function renderProductDetail(product) {
       <!-- Gallery -->
       <div class="detail-gallery">
         <div class="gallery-main-img" id="galleryMainImg" aria-label="Imagen principal del producto">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--grad-dark);font-size:8rem;">${product.emoji}</div>
+        <img
+        src="${imgs[0]}"
+        alt="${product.name}"
+        id="mainProductImage"
+        class="main-product-image">
         </div>
         <div class="gallery-thumbs" role="list" aria-label="Galería de imágenes">${thumbsHTML}</div>
       </div>
@@ -1284,7 +1290,12 @@ function switchMainImg(thumb, src) {
   document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
   thumb.classList.add('active');
 }
-
+function switchMainImg(element, src){
+  document.getElementById('mainProductImage').src = src;
+  document.querySelectorAll('.gallery-thumb')
+  .forEach(thumb => thumb.classList.remove('active'));
+  element.classList.add('active');
+}
 function shareProduct(name) {
   if (navigator.share) {
     navigator.share({ title: name, text: `Mira este producto de G-FIT: ${name}`, url: window.location.href });
@@ -1459,10 +1470,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (matches.length > 0) {
         suggestionsEl.innerHTML = matches.map(p =>
-          `<div class="suggestion-item" role="option" onclick="selectSuggestion('${p.name.replace(/'/g,"\\'")}')">
-            ${p.emoji} ${p.name}
-          </div>`
-        ).join('');
+  `<div class="suggestion-item"
+        role="option"
+        onclick="selectSuggestion('${p.name.replace(/'/g,"\\'")}')">
+
+      <img
+        src="${p.images[0]}"
+        alt="${p.name}"
+        class="suggestion-image">
+
+      <span>${p.name}</span>
+
+  </div>`
+).join('');
         suggestionsEl.classList.add('visible');
       } else {
         hideSuggestions();
