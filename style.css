@@ -329,6 +329,18 @@ input, select, textarea {
 .search-btn:hover { opacity: 0.85; }
 
 /* Search Suggestions */
+.suggestion-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.suggestion-image{
+    width:45px;
+    height:45px;
+    object-fit:cover;
+    border-radius:10px;
+}
 .search-suggestions {
   position: absolute;
   top: calc(100% + 8px);
