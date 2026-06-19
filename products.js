@@ -64,7 +64,12 @@ const PRODUCTS = [
     sizes: ['XS','S','M','L','XL'],
     color: 'Lavanda / Dorado',
     material: '80% Poliamida, 20% Elastano',
-    emoji: '👙',
+    images:[
+      'img/Producto_2.1.jpg',
+      'img/Producto_2.2.jpg',
+      'img/Producto_2.3.jpg',
+      'img/Producto_2.4.jpg'
+    ],
     colorHex: '#B07BC4',
     description: 'Top deportivo con relleno removible y efecto push-up natural. Ideal para entrenamiento intenso con soporte de nivel medio-alto. Diseño atrevido con detalles en tono dorado.',
     specs: {
