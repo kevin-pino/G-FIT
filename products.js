@@ -102,7 +102,12 @@ const PRODUCTS = [
     sizes: ['XS','S','M','L','XL'],
     color: 'Negro / Lila',
     material: '72% Poliéster, 22% Nylon, 6% Elastano',
-    emoji: '👗',
+    images:[
+      'img/Producto3.1.jpg',
+      'img/Producto3.2.jpg',
+      'img/Producto3.3.jpg',
+      'img/Producto3.4.jpg'
+    ],
     colorHex: '#2d1126',
     description: 'Conjunto completo legging + top coordinado con estampado galaxy exclusivo de G-FIT. Tecnología anti-transparencia y compresión progresiva para máximo rendimiento y estilo.',
     specs: {
@@ -135,7 +140,12 @@ const PRODUCTS = [
     sizes: ['XS','S','M','L','XL','XXL'],
     color: 'Negro / Coral',
     material: '88% Poliéster, 12% Elastano',
-    emoji: '🩳',
+    images:[
+      'img/Producto4.1.jpg',
+      'img/Producto4.2.jpg',
+      'img/Producto4.3.jpg',
+      'img/Producto4.4.jpg'
+    ],
     colorHex: '#1a1a1a',
     description: 'Short ultraliviano para running y cardio intenso. Diseño con capa interior anti-rozamiento y bolsillo trasero con cremallera para tus esenciales.',
     specs: {
@@ -167,7 +177,12 @@ const PRODUCTS = [
     sizes: ['XS','S','M','L','XL'],
     color: 'Negro / Rosado Metalizado',
     material: '100% Nylon repelente al agua',
-    emoji: '🧥',
+    images:[
+      'img/Producto5.1.jpg',
+      'img/Producto5.2.jpg',
+      'img/Producto5.3.jpg',
+      'img/Producto5.4.jpg'
+    ],
     colorHex: '#0d0d0d',
     description: 'Chaqueta cortavientos liviana con detalles metalizados en rosado dorado. Capucha desmontable, reflectivos para seguridad nocturna y bolsillos con cremallera.',
     specs: {
@@ -199,7 +214,12 @@ const PRODUCTS = [
     sizes: ['S','M','L','XL','XXL'],
     color: 'Gris Marengo / Rose Gold',
     material: '60% Algodón, 35% Poliéster, 5% Elastano',
-    emoji: '🧸',
+    images:[
+      'img/Producto6.1.jpg',
+      'img/Producto6.2.jpg',
+      'img/Producto6.3.jpg',
+      'img/Producto6.4.jpg'
+    ],
     colorHex: '#3d3d3d',
     description: 'Sudadera oversize de tejido suave tipo velvet touch. Manga raglan para mayor libertad de movimiento. Perfecta para post-entreno o días casual en casa.',
     specs: {
@@ -232,7 +252,12 @@ const PRODUCTS = [
     sizes: ['XS','S','M','L','XL'],
     color: 'Negro / Detalles Neón',
     material: '78% Poliéster Reciclado, 22% Elastano',
-    emoji: '🏃‍♀️',
+    images:[
+      'img/Producto7.1.jpg',
+      'img/Producto7.2.jpg',
+      'img/Producto7.3.jpg',
+      'img/Producto7.4.jpg'
+    ],
     colorHex: '#1a1a1a',
     description: 'Legging de alto rendimiento para running con paneles de malla estratégicos para ventilación. Costuras planas anti-rozamiento y cintura con bolsillo para smartphone.',
     specs: {
@@ -264,7 +289,12 @@ const PRODUCTS = [
     sizes: ['XS','S','M','L','XL'],
     color: 'Nude / Lila Pastel',
     material: '85% Nylon, 15% Elastano',
-    emoji: '🧘‍♀️',
+    images:[
+      'img/Producto8.1.jpg',
+      'img/Producto8.2.jpg',
+      'img/Producto8.3.jpg',
+      'img/Producto8.4.jpg'
+    ],
     colorHex: '#C9956C',
     description: 'Bralette deportivo de corte limpio para yoga y pilates. Diseño sin costuras visibles con tela de segunda piel ultra cómoda. Soporte ligero a medio.',
     specs: {
@@ -283,7 +313,7 @@ const PRODUCTS = [
   },
   {
     id: 9,
-    name: 'Conjunto Gym Power Duo',
+    name: 'Conjunto Gym Power',
     category: 'gym',
     price: 135000,
     originalPrice: 175000,
@@ -297,7 +327,12 @@ const PRODUCTS = [
     sizes: ['XS','S','M','L','XL','XXL'],
     color: 'Negro Total',
     material: '70% Nylon, 25% Poliéster, 5% Elastano',
-    emoji: '🏋️‍♀️',
+    images:[
+      'img/Producto9.1.jpg',
+      'img/Producto9.2.jpg',
+      'img/Producto9.3.jpg',
+      'img/Producto9.4.jpg'
+    ],
     colorHex: '#0d0d0d',
     description: 'Conjunto de alta performance para gym intenso. Legging de cintura ancha con soporte lumbar y top de tirantes ajustables. Material de secado ultra-rápido.',
     specs: {
@@ -329,7 +364,12 @@ const PRODUCTS = [
     sizes: ['XS','S','M','L','XL'],
     color: 'Rosado / Lila Tie-Dye',
     material: '75% Poliéster, 20% Nylon, 5% Elastano',
-    emoji: '🌸',
+    images:[
+      'img/Producto10.1.jpg',
+      'img/Producto10.2.jpg',
+      'img/Producto10.3.jpg',
+      'img/Producto10.4.jpg'
+    ],
     colorHex: '#d4a0c0',
     description: 'Legging con exclusivo estampado tie-dye rosado y lila. Edición limitada con efecto artesanal único. Corte de cintura media y tela de compresión moderada.',
     specs: {
@@ -361,7 +401,12 @@ const PRODUCTS = [
     sizes: ['XS','S','M','L','XL'],
     color: 'Negro / Rosado Neón',
     material: '82% Poliamida, 18% Elastano',
-    emoji: '💪',
+    images:[
+      'img/Producto11.1.jpg',
+      'img/Producto11.2.jpg',
+      'img/Producto11.3.jpg',
+      'img/Producto11.4.jpg'
+    ],
     colorHex: '#1a0a14',
     description: 'Top deportivo de espalda cruzada con soporte medio-alto ideal para entrenamientos de alta intensidad. Tiras ajustables y diseño que deja respirar la espalda.',
     specs: {
@@ -393,7 +438,12 @@ const PRODUCTS = [
     sizes: ['XS','S','M','L','XL','XXL'],
     color: 'Negro / Detalles Dorados',
     material: '80% Nylon, 20% Elastano',
-    emoji: '🚴‍♀️',
+    images:[
+      'img/Producto12.1.jpg',
+      'img/Producto12.2.jpg',
+      'img/Producto12.3.jpg',
+      'img/Producto12.4.jpg'
+    ],
     colorHex: '#1a1a1a',
     description: 'Short de ciclismo de corte largo con acolchado interior 3D para máximo confort. Cintura alta y costuras planas. Perfecto también para running y cardio.',
     specs: {
@@ -425,7 +475,12 @@ const PRODUCTS = [
     sizes: ['XS','S','M','L','XL'],
     color: 'Azul Noche / Plata',
     material: '76% Poliéster reciclado, 24% Elastano',
-    emoji: '⚡',
+    images:[
+      'img/Producto13.1.jpg',
+      'img/Producto13.2.jpg',
+      'img/Producto13.3.jpg',
+      'img/Producto13.4.jpg'
+    ],
     colorHex: '#1a2040',
     description: 'Conjunto completo para running outdoor con tecnología Storm Shield. Resistente al viento y repelente al agua ligero. Reflectivos para máxima visibilidad nocturna.',
     specs: {
@@ -457,7 +512,12 @@ const PRODUCTS = [
     sizes: ['XS','S','M','L','XL','XXL'],
     color: 'Arena / Rosado Nude',
     material: '92% Nylon, 8% Elastano',
-    emoji: '✨',
+    images:[
+      'img/Producto14.1.jpg',
+      'img/Producto14.2.jpg',
+      'img/Producto14.3.jpg',
+      'img/Producto14.4.jpg'
+    ],
     colorHex: '#C9956C',
     description: 'Legging sin costuras con efecto segunda piel. La más vendida de G-FIT. Tela opaca de alta densidad, moldeadora y de secado ultra-rápido. Compresión progresiva.',
     specs: {
@@ -490,7 +550,12 @@ const PRODUCTS = [
     sizes: ['XS','S','M','L','XL'],
     color: 'Gris Oscuro / Rose Gold',
     material: 'Exterior: 100% Poliéster. Interior: Micro-fleece térmico',
-    emoji: '🌡️',
+    images:[
+      'img/Producto15.1.jpg',
+      'img/Producto15.2.jpg',
+      'img/Producto15.3.jpg',
+      'img/Producto15.4.jpg'
+    ],
     colorHex: '#2a2a2a',
     description: 'Chaqueta deportiva con forro micro-fleece térmico para días fríos. Cremallera frontal completa, bolsillos calentadores y puños de punto para retención de calor.',
     specs: {
@@ -522,7 +587,12 @@ const PRODUCTS = [
     sizes: ['XS','S','M','L','XL','XXL'],
     color: 'Multicolor',
     material: '95% Algodón Pima, 5% Elastano',
-    emoji: '🎽',
+    images:[
+      'img/Producto16.1.jpg',
+      'img/Producto16.2.jpg',
+      'img/Producto16.3.jpg',
+      'img/Producto16.4.jpg'
+    ],
     colorHex: '#4a3040',
     description: 'Top tipo camiseta sin mangas de algodón pima con textura acanalada (rib). Perfecto para el gym o para el día a día. Corte crop ligeramente holgado.',
     specs: {
@@ -554,7 +624,12 @@ const PRODUCTS = [
     sizes: ['Talla Única'],
     color: 'Negro / Rosado Dorado',
     material: 'Nylon 600D resistente al agua',
-    emoji: '🎒',
+    images:[
+      'img/Producto17.1.jpg',
+      'img/Producto17.2.jpg',
+      'img/Producto17.3.jpg',
+      'img/Producto17.4.jpg'
+    ],
     colorHex: '#1a1a1a',
     description: 'Mochila deportiva compacta con compartimento para zapatos separado, bolsillo lateral para botella y detalle en correa de color rosado dorado G-FIT.',
     specs: {
@@ -586,7 +661,12 @@ const PRODUCTS = [
     sizes: ['XS','S','M','L','XL'],
     color: 'Crudo / Café',
     material: '68% Poliéster, 26% Viscosa, 6% Elastano',
-    emoji: '🌺',
+    images:[
+      'img/Producto18.1.jpg',
+      'img/Producto18.2.jpg',
+      'img/Producto18.3.jpg',
+      'img/Producto18.4.jpg'
+    ],
     colorHex: '#8B6548',
     description: 'Legging estilo flare con acampanado en la parte inferior. Diseño boho-sport ideal para yoga, pilates y actividades de bajo impacto. Cintura alta y plisados decorativos.',
     specs: {
@@ -618,7 +698,12 @@ const PRODUCTS = [
     sizes: ['XS','S','M','L','XL'],
     color: 'Gris Claro / Lavanda',
     material: '58% Algodón, 38% Poliéster, 4% Elastano',
-    emoji: '🌙',
+    images:[
+      'img/Producto19.1.jpg',
+      'img/Producto19.2.jpg',
+      'img/Producto19.3.jpg',
+      'img/Producto19.4.jpg'
+    ],
     colorHex: '#9B6DB5',
     description: 'Sudadera crop con capucha ligera y acabado suave. Diseño minimalista con logo G-FIT bordado en lavanda. Perfecta para post-workout o loungewear.',
     specs: {
@@ -651,7 +736,12 @@ const PRODUCTS = [
     sizes: ['XS','S','M','L','XL'],
     color: 'Negro / Detalles Rose Gold',
     material: '68% Nylon, 28% Poliéster, 4% Elastano + Hilo metalizado',
-    emoji: '💎',
+    images:[
+      'img/Producto20.1.jpg',
+      'img/Producto20.2.jpg',
+      'img/Producto20.3.jpg',
+      'img/Producto20.4.jpg'
+    ],
     colorHex: '#1a0a14',
     description: 'Conjunto premium de edición especial con hilo metalizado rose gold tejido en la tela. Legging de cintura muy alta con doble capa sculpting y top con soporte alto integrado. La prenda más exclusiva de G-FIT.',
     specs: {
