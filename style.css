@@ -2235,6 +2235,42 @@ input, select, textarea {
 
 .cart-clear-btn:hover { color: #ff4757; }
 
+.cart-size-select{
+    margin-top:8px;
+    padding:8px 12px;
+    width: 100px;
+
+    background: #1a1a1a;
+    color: #fff;
+
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+
+    cursor: pointer;
+    outline: none;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.cart-size-select:hover{
+    border-color:#C9956C;
+}
+
+.cart-size-select option{
+    background:#1a1a1a;
+    color:#ffffff;
+    font-weight:600;
+}
+.cart-size-select:focus{
+    background:#1a1a1a;
+    color:white;
+}
+
 /* ============================================================
    TESTIMONIALS
 ============================================================ */

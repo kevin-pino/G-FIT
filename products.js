@@ -1091,20 +1091,27 @@ function openProductDetail(productId) {
   const product = PRODUCTS.find(p => p.id === productId);
   if (!product) return;
 
+  // Reiniciar valores del detalle
+  selectedSize = null;
+  currentDetailQty = 1;
+
   const overlay = document.getElementById('productDetailOverlay');
   const container = document.getElementById('productDetailContainer');
 
   container.innerHTML = renderProductDetail(product);
+
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
 
-  // Init detail features
-  initSizeSelector();
-  initDetailTabs();
-  initReviewStars();
-  updateDetailQty(1);
-}
+  selectedSize = null;
+  currentDetailQty = 1;
 
+initDetailTabs();
+initReviewStars();
+updateDetailQty(1);
+
+  document.getElementById("detailQty").textContent = currentDetailQty;
+}
 /* ============================================================
    RENDER PRODUCT DETAIL
 ============================================================ */
@@ -1115,16 +1122,19 @@ function renderProductDetail(product) {
 
   const thumbsHTML = imgs.map((src, i) => `
 <div class="gallery-thumb ${i === 0 ? 'active' : ''}"
-     onclick="switchMainImg(this, '${src}')"
-     aria-label="Imagen ${i + 1}">
-     
-     <img src="${src}" alt="${product.name}">
-     
+    onclick="switchMainImg(this, '${src}')"
+    aria-label="Imagen ${i + 1}">
+    <img src="${src}" alt="${product.name}">
+    
 </div>`).join('');
 
   const sizesHTML = product.sizes.map(size =>
-    `<button class="size-option" data-size="${size}" onclick="selectSize(this)" aria-label="Talla ${size}">${size}</button>`
-  ).join('');
+  `<button class="size-option"
+          data-size="${size}"
+          onclick="selectSize(this)">
+      ${size}
+    </button>`
+).join('');
 
   const specsHTML = Object.entries(product.specs).map(([key, val]) =>
     `<tr><th scope="row">${key}</th><td>${val}</td></tr>`
@@ -1312,14 +1322,14 @@ function changeDetailQty(delta) {
 let selectedSize = null;
 
 function selectSize(btn) {
-  document.querySelectorAll('.size-option').forEach(b => b.classList.remove('selected'));
-  btn.classList.add('selected');
-  selectedSize = btn.dataset.size;
-}
+  document.querySelectorAll('.size-option')
+    .forEach(b => b.classList.remove('selected'));
 
-function initSizeSelector() {
-  selectedSize = null;
-  currentDetailQty = 1;
+  btn.classList.add('selected');
+
+  selectedSize = btn.dataset.size;
+
+  console.log("Talla seleccionada:", selectedSize);
 }
 
 function showTab(tabId) {
@@ -1404,22 +1414,33 @@ function shareProduct(name) {
    ADD TO CART FROM DETAIL
 ============================================================ */
 function addToCartFromDetail(productId) {
+
   if (!selectedSize) {
     showToast('Por favor selecciona una talla', 'error');
-    // Highlight size grid
+
     document.getElementById('sizeSelector')?.animate([
       { transform: 'translateX(-4px)' },
       { transform: 'translateX(4px)' },
       { transform: 'translateX(-4px)' },
       { transform: 'translateX(0)' }
     ], { duration: 300 });
+
     return;
   }
+
   const product = PRODUCTS.find(p => p.id === productId);
-  if (product) {
-    addToCart(product, selectedSize, currentDetailQty);
-    showToast(`"${product.name}" agregado al carrito`, 'success');
-  }
+
+  if (!product) return;
+
+  addToCart(product, selectedSize, currentDetailQty);
+
+  showToast(
+    `"${product.name}" agregado — Talla ${selectedSize}`,
+    'success'
+  );
+
+  // Opcional: cerrar el detalle del producto
+  closeProductDetail();
 }
 
 function buyNow(productId) {
@@ -1553,7 +1574,17 @@ cartItems.innerHTML += `
 
         <p>${formatPrice(product.price)}</p>
 
-        <small>Talla: ${item.size}</small>
+        <select class="cart-size-select"
+        onchange="changeCartSize(${product.id}, '${item.size}', this.value)">
+
+    ${product.sizes.map(size => `
+      <option value="${size}"
+        ${size === item.size ? 'selected' : ''}>
+        ${size}
+      </option>
+    `).join('')}
+
+</select>
 
         <div class="cart-qty">
 
@@ -1674,6 +1705,27 @@ function removeFromCart(productId, size) {
 
   renderCart();
 
+}
+function changeCartSize(productId, oldSize, newSize) {
+
+  let cart = getCart();
+
+  const item = cart.find(
+    i => i.id === productId && i.size === oldSize
+  );
+
+  if (!item) return;
+
+  item.size = newSize;
+
+  saveCart(cart);
+
+  renderCart();
+
+  showToast(
+    `Talla cambiada a ${newSize}`,
+    'success'
+  );
 }
 function updateCartBadge() {
 
