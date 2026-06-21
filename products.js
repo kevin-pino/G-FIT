@@ -23,7 +23,7 @@ const PRODUCTS = [
     isBestSeller: true,
     isFeatured: true,
     sizes: ['XS','S','M','L','XL','XXL'],
-    color: 'Negro / Rosado',
+    color: 'Negro',
     material: '75% Poliéster, 20% Nylon, 5% Elastano',
     images:[
       'img/leggins.jpg',
@@ -62,7 +62,7 @@ const PRODUCTS = [
     isBestSeller: true,
     isFeatured: true,
     sizes: ['XS','S','M','L','XL'],
-    color: 'Lavanda / Dorado',
+    color: 'Negro / Beige / Azul',
     material: '80% Poliamida, 20% Elastano',
     images:[
       'img/Producto_2.1.jpg',
@@ -71,11 +71,11 @@ const PRODUCTS = [
       'img/Producto_2.4.jpg'
     ],
     colorHex: '#B07BC4',
-    description: 'Top deportivo con relleno removible y efecto push-up natural. Ideal para entrenamiento intenso con soporte de nivel medio-alto. Diseño atrevido con detalles en tono dorado.',
+    description: 'Top deportivo con relleno removible y efecto push-up natural. Ideal para entrenamiento intenso con soporte de nivel medio-alto.',
     specs: {
       'Soporte': 'Medio-Alto',
       'Relleno': 'Removible',
-      'Cierre': 'Sin cierre / elástico',
+      'Cierre': 'Hebilla trasera / elástico',
       'Tirantes': 'Cruzados en espalda',
       'Tecnología': 'Quick-Dry',
       'Uso ideal': 'Gym, HIIT, Spinning'
@@ -88,7 +88,7 @@ const PRODUCTS = [
   },
   {
     id: 3,
-    name: 'Conjunto Deportivo Galaxy Set',
+    name: 'Conjunto Deportivo Black',
     category: 'conjuntos',
     price: 145000,
     originalPrice: 195000,
@@ -100,7 +100,7 @@ const PRODUCTS = [
     isBestSeller: false,
     isFeatured: true,
     sizes: ['XS','S','M','L','XL'],
-    color: 'Negro / Lila',
+    color: 'Negro',
     material: '72% Poliéster, 22% Nylon, 6% Elastano',
     images:[
       'img/Producto3.1.jpg',
@@ -114,7 +114,6 @@ const PRODUCTS = [
       'Incluye': 'Legging + Top',
       'Compresión legging': 'Alta',
       'Soporte top': 'Medio',
-      'Estampado': 'Galaxy G-FIT Exclusive',
       'Tecnología': 'Sculpt + Quick-Dry',
       'Uso ideal': 'Gym, Yoga, Crossfit'
     },
@@ -138,7 +137,7 @@ const PRODUCTS = [
     isBestSeller: false,
     isFeatured: false,
     sizes: ['XS','S','M','L','XL','XXL'],
-    color: 'Negro / Coral',
+    color: 'Negro',
     material: '88% Poliéster, 12% Elastano',
     images:[
       'img/Producto4.1.jpg',
@@ -163,7 +162,7 @@ const PRODUCTS = [
   },
   {
     id: 5,
-    name: 'Chaqueta Windbreaker Urban Flow',
+    name: 'Chaqueta Deportiva SculptFit Serenity',
     category: 'chaquetas',
     price: 125000,
     originalPrice: 165000,
@@ -175,7 +174,7 @@ const PRODUCTS = [
     isBestSeller: false,
     isFeatured: false,
     sizes: ['XS','S','M','L','XL'],
-    color: 'Negro / Rosado Metalizado',
+    color: 'Verde Salvia / Blanco / Rosado / Negro',
     material: '100% Nylon repelente al agua',
     images:[
       'img/Producto5.1.jpg',
@@ -184,14 +183,14 @@ const PRODUCTS = [
       'img/Producto5.4.jpg'
     ],
     colorHex: '#0d0d0d',
-    description: 'Chaqueta cortavientos liviana con detalles metalizados en rosado dorado. Capucha desmontable, reflectivos para seguridad nocturna y bolsillos con cremallera.',
+    description: 'Chaqueta deportiva premium de ajuste ergonómico diseñada para realzar la silueta y brindar máxima comodidad durante cada entrenamiento. Su tejido suave y elástico ofrece libertad de movimiento, mientras que el cierre frontal completo y las mangas con orificio para pulgar proporcionan un ajuste seguro y sofisticado. Ideal para gimnasio, running, yoga o para complementar un look deportivo casual.',
     specs: {
-      'Tipo': 'Windbreaker / Cortaviento',
-      'Capucha': 'Desmontable',
-      'Bolsillos': '2 laterales + 1 interior',
-      'Reflectivos': 'Sí, para seguridad nocturna',
-      'Resistencia': 'Viento y lluvia ligera',
-      'Uso ideal': 'Running outdoor, Urban Fitness'
+      'Tipo': 'Chaqueta deportiva de ajuste Slim Fit',
+      'Cierre': 'Cremallera frontal completa',
+      'Cuello': 'Alto tipo mandarín',
+      'Tecnología': 'Quick-Dry + Stretch Fit',
+      'Elasticidad': 'Alta, con libertad de movimiento',
+      'Uso ideal': 'Gym, Running, Yoga, Pilates y uso casual deportivo'
     },
     care: ['Lavar a máquina fría delicada', 'No usar blanqueador', 'No secar en secadora', 'Colgar para secar'],
     sampleReviews: [
@@ -212,7 +211,7 @@ const PRODUCTS = [
     isBestSeller: true,
     isFeatured: false,
     sizes: ['S','M','L','XL','XXL'],
-    color: 'Gris Marengo / Rose Gold',
+    color: 'Negro',
     material: '60% Algodón, 35% Poliéster, 5% Elastano',
     images:[
       'img/Producto6.1.jpg',
@@ -221,12 +220,12 @@ const PRODUCTS = [
       'img/Producto6.4.jpg'
     ],
     colorHex: '#3d3d3d',
-    description: 'Sudadera oversize de tejido suave tipo velvet touch. Manga raglan para mayor libertad de movimiento. Perfecta para post-entreno o días casual en casa.',
+    description: 'Sudadera oversize confeccionada con tejido suave de acabado aterciopelado (velvet touch), diseñada para brindar una sensación de calidez y comodidad superior. Su corte holgado y capucha integrada ofrecen un estilo relajado y moderno, perfecto para complementar tus outfits deportivos o casuales. Ideal para días frescos, entrenamientos ligeros o para disfrutar de un look cómodo con un toque sofisticado.',
     specs: {
       'Silueta': 'Oversize',
-      'Manga': 'Raglan larga',
-      'Bolsillos': 'Canguro frontal',
-      'Cuello': 'Redondo con elástico',
+      'Manga': 'Largas de corte holgado',
+      'Bolsillos': 'Dos bolsillos laterales tipo canguro',
+      'Capucha': 'Integrada con ajuste relajado',
       'Acabado': 'Velvet Touch',
       'Uso ideal': 'Casual, Post-entreno, Loungewear'
     },
@@ -250,7 +249,7 @@ const PRODUCTS = [
     isBestSeller: true,
     isFeatured: true,
     sizes: ['XS','S','M','L','XL'],
-    color: 'Negro / Detalles Neón',
+    color: 'Gris perla',
     material: '78% Poliéster Reciclado, 22% Elastano',
     images:[
       'img/Producto7.1.jpg',
@@ -259,13 +258,12 @@ const PRODUCTS = [
       'img/Producto7.4.jpg'
     ],
     colorHex: '#1a1a1a',
-    description: 'Legging de alto rendimiento para running con paneles de malla estratégicos para ventilación. Costuras planas anti-rozamiento y cintura con bolsillo para smartphone.',
+    description: 'Legging de alto rendimiento para running con paneles de malla estratégicos para ventilación. Costuras planas anti-rozamiento.',
     specs: {
       'Compresión': 'Progresiva (tobillo a rodilla)',
       'Bolsillo cintura': 'Para smartphone hasta 6.5"',
       'Malla': 'Paneles laterales de ventilación',
       'Costuras': 'Planas anti-rozamiento',
-      'Reflectivos': 'Sí',
       'Uso ideal': 'Running, Trail, Maratón'
     },
     care: ['Lavar a máquina fría', 'No usar suavizante (reduce elasticidad)', 'Secar al aire'],
@@ -287,7 +285,7 @@ const PRODUCTS = [
     isBestSeller: true,
     isFeatured: false,
     sizes: ['XS','S','M','L','XL'],
-    color: 'Nude / Lila Pastel',
+    color: 'Salmón vibrante',
     material: '85% Nylon, 15% Elastano',
     images:[
       'img/Producto8.1.jpg',
@@ -296,13 +294,13 @@ const PRODUCTS = [
       'img/Producto8.4.jpg'
     ],
     colorHex: '#C9956C',
-    description: 'Bralette deportivo de corte limpio para yoga y pilates. Diseño sin costuras visibles con tela de segunda piel ultra cómoda. Soporte ligero a medio.',
+    description: 'Top deportivo tipo bralette sin costuras (seamless) con cuello en V. Cuenta con paneles de ventilación geométrica troquelados bajo el busto y en la espalda para maximizar el flujo de aire y evitar rozaduras.',
     specs: {
-      'Soporte': 'Ligero a medio',
-      'Diseño': 'Sin costuras visibles',
+      'Soporte': 'Ligero a medio, con banda elástica ancha en la base.',
+      'Diseño': 'Tejido elástico continuo sin costuras (Seamless).',
       'Relleno': 'Sin relleno',
       'Cierre': 'Sin cierre',
-      'Tela': 'Segunda piel, opaca',
+      'Ventilación': 'Perforaciones triangulares integradas en espalda y bajo el busto.',
       'Uso ideal': 'Yoga, Pilates, Barre, Meditación'
     },
     care: ['Lavar a mano preferible', 'Máquina en bolsa de malla, ciclo delicado', 'No usar secadora', 'Tender horizontal'],
@@ -325,7 +323,7 @@ const PRODUCTS = [
     isBestSeller: false,
     isFeatured: true,
     sizes: ['XS','S','M','L','XL','XXL'],
-    color: 'Negro Total',
+    color: 'Verde oliva',
     material: '70% Nylon, 25% Poliéster, 5% Elastano',
     images:[
       'img/Producto9.1.jpg',
@@ -334,11 +332,11 @@ const PRODUCTS = [
       'img/Producto9.4.jpg'
     ],
     colorHex: '#0d0d0d',
-    description: 'Conjunto de alta performance para gym intenso. Legging de cintura ancha con soporte lumbar y top de tirantes ajustables. Material de secado ultra-rápido.',
+    description: 'Conjunto deportivo de dos piezas en tejido acanalado (ribbed) sin costuras. Incluye un top de cuello cuadrado con tirantes anchos y leggings de tiro alto con pretina de compresión para moldear la figura.',
     specs: {
       'Incluye': 'Legging + Top de tirantes',
-      'Soporte lumbar': 'Panel ancho de soporte',
-      'Tirantes top': 'Ajustables',
+      'Corte del Legging': 'Cintura de tiro alto con pretina ancha para control de abdomen.',
+      'Corte del Top': 'Escote cuadrado con banda elástica reforzada bajo el busto.',
       'Compresión': 'Alta',
       'Tecnología': 'Ultra Dry-Fit',
       'Uso ideal': 'Gym, Crossfit, Levantamiento'
@@ -362,7 +360,7 @@ const PRODUCTS = [
     isBestSeller: false,
     isFeatured: false,
     sizes: ['XS','S','M','L','XL'],
-    color: 'Rosado / Lila Tie-Dye',
+    color: 'Gris azulado con negro (efecto tie-dye/veteado)',
     material: '75% Poliéster, 20% Nylon, 5% Elastano',
     images:[
       'img/Producto10.1.jpg',
@@ -371,10 +369,10 @@ const PRODUCTS = [
       'img/Producto10.4.jpg'
     ],
     colorHex: '#d4a0c0',
-    description: 'Legging con exclusivo estampado tie-dye rosado y lila. Edición limitada con efecto artesanal único. Corte de cintura media y tela de compresión moderada.',
+    description: 'Legging deportivo largo con estampado de efecto desteñido (tie-dye) abstracto. Cuenta con un corte de tiro alto, pretina ancha de compresión y costuras planas reforzadas para un ajuste seguro durante el entrenamiento',
     specs: {
-      'Estampado': 'Tie-Dye exclusivo',
-      'Cintura': 'Media',
+      'Estampado': 'Patrón tie-dye con manchas orgánicas oscuras',
+      'Cintura': 'Cintura alta con pretina elástica',
       'Compresión': 'Moderada',
       'Edición': 'Limitada',
       'Bolsillos': 'No',
@@ -399,7 +397,7 @@ const PRODUCTS = [
     isBestSeller: false,
     isFeatured: false,
     sizes: ['XS','S','M','L','XL'],
-    color: 'Negro / Rosado Neón',
+    color: 'Azul grafito',
     material: '82% Poliamida, 18% Elastano',
     images:[
       'img/Producto11.1.jpg',
@@ -408,10 +406,10 @@ const PRODUCTS = [
       'img/Producto11.4.jpg'
     ],
     colorHex: '#1a0a14',
-    description: 'Top deportivo de espalda cruzada con soporte medio-alto ideal para entrenamientos de alta intensidad. Tiras ajustables y diseño que deja respirar la espalda.',
+    description: 'Top deportivo de soporte ligero con cuello en V y tirantes delgados regulables. Destaca por su diseño de espalda cruzada en "X" con una abertura inferior estilizada, y una banda elástica inferior contramarcada que asegura un ajuste firme y cómodo.',
     specs: {
       'Soporte': 'Medio-Alto',
-      'Diseño espalda': 'Crossback con tiras',
+      'Diseño espalda': 'Tirantes que se cruzan en la espalda formando una "X" con apertura geométrica baja.',
       'Relleno': 'Removible',
       'Ajuste': 'Tiras ajustables',
       'Tecnología': 'Breathable Mesh Panel',
@@ -436,7 +434,7 @@ const PRODUCTS = [
     isBestSeller: true,
     isFeatured: false,
     sizes: ['XS','S','M','L','XL','XXL'],
-    color: 'Negro / Detalles Dorados',
+    colores: 'variados',
     material: '80% Nylon, 20% Elastano',
     images:[
       'img/Producto12.1.jpg',
@@ -445,7 +443,7 @@ const PRODUCTS = [
       'img/Producto12.4.jpg'
     ],
     colorHex: '#1a1a1a',
-    description: 'Short de ciclismo de corte largo con acolchado interior 3D para máximo confort. Cintura alta y costuras planas. Perfecto también para running y cardio.',
+    description: 'Short corto tipo biker o de ciclismo confeccionado en licra de alta elasticidad con un sutil acabado brillante. Diseñado con pretina alta y lisa que se ajusta cómodamente al abdomen sin cortar la silueta, ideal tanto para entrenamientos deportivos como para un look casual diario.',
     specs: {
       'Largo': '3/4 (hasta rodilla)',
       'Acolchado': '3D interior, removible',
@@ -473,7 +471,7 @@ const PRODUCTS = [
     isBestSeller: false,
     isFeatured: true,
     sizes: ['XS','S','M','L','XL'],
-    color: 'Azul Noche / Plata',
+    color: 'Negro',
     material: '76% Poliéster reciclado, 24% Elastano',
     images:[
       'img/Producto13.1.jpg',
@@ -482,9 +480,9 @@ const PRODUCTS = [
       'img/Producto13.4.jpg'
     ],
     colorHex: '#1a2040',
-    description: 'Conjunto completo para running outdoor con tecnología Storm Shield. Resistente al viento y repelente al agua ligero. Reflectivos para máxima visibilidad nocturna.',
+    description: 'Conjunto deportivo de dos piezas diseñado para correr a alto rendimiento. Incluye una camiseta técnica de cuello redondo y manga corta ajustada al cuerpo, junto con un short fluido de running que cuenta con aberturas laterales pronunciadas para garantizar una zancada completamente libre y sin restricciones.',
     specs: {
-      'Incluye': 'Legging + Top técnico',
+      'Incluye': 'Legging + Camiseta técnica de manga corta',
       'Tecnología': 'Storm Shield, Reflective',
       'Resistencia': 'Viento y lluvia ligera',
       'Bolsillos': '3 (2 legging + 1 top)',
@@ -510,7 +508,7 @@ const PRODUCTS = [
     isBestSeller: true,
     isFeatured: true,
     sizes: ['XS','S','M','L','XL','XXL'],
-    color: 'Arena / Rosado Nude',
+    color: 'Beige claro',
     material: '92% Nylon, 8% Elastano',
     images:[
       'img/Producto14.1.jpg',
@@ -519,7 +517,7 @@ const PRODUCTS = [
       'img/Producto14.4.jpg'
     ],
     colorHex: '#C9956C',
-    description: 'Legging sin costuras con efecto segunda piel. La más vendida de G-FIT. Tela opaca de alta densidad, moldeadora y de secado ultra-rápido. Compresión progresiva.',
+    description: 'Legging moldeador de tiro ultra alto y compresión localizada. Su tejido continuo sin costuras (seamless) simula un efecto de segunda piel, combinando paneles elásticos estructurados bajo los glúteos para realce (push-up) y una banda ancha abdominal para un control firme de la zona media.',
     specs: {
       'Costuras': 'Sin costuras (seamless)',
       'Opacidad': '100% opaca',
@@ -548,7 +546,7 @@ const PRODUCTS = [
     isBestSeller: false,
     isFeatured: false,
     sizes: ['XS','S','M','L','XL'],
-    color: 'Gris Oscuro / Rose Gold',
+    color: 'Beige / Hueso',
     material: 'Exterior: 100% Poliéster. Interior: Micro-fleece térmico',
     images:[
       'img/Producto15.1.jpg',
@@ -557,12 +555,12 @@ const PRODUCTS = [
       'img/Producto15.4.jpg'
     ],
     colorHex: '#2a2a2a',
-    description: 'Chaqueta deportiva con forro micro-fleece térmico para días fríos. Cremallera frontal completa, bolsillos calentadores y puños de punto para retención de calor.',
+    description: 'Chaqueta térmica de vellón (fleece) con diseño bicolor combinando paneles reforzados en hombros y pecho. Cuenta con cremallera frontal completa, bolsillos laterales con cierre, un bolsillo vertical en el pecho y puños elásticos con abertura para el pulgar, ideal para actividades al aire libre o climas fríos.',
     specs: {
-      'Tipo': 'Térmica con forro fleece',
-      'Cremallera': 'Frontal completa YKK',
-      'Bolsillos': '2 calentadores laterales',
-      'Puños': 'Punto elástico',
+      'Tipo': 'Tela de vellón suave (fleece) de alta retención térmica',
+      'Cremallera': 'Cremallera frontal completa con cuello alto para protección térmica del cuello.',
+      'Bolsillos': '3 en total con cremalleras de seguridad (2 laterales y 1 vertical en el pecho).',
+      'Puños': 'Ajustados en tela elástica con pasador para el dedo pulgar (thumbholes).',
       'Temperatura ideal': '8-18°C',
       'Uso ideal': 'Running en frío, Montañismo, Gym en invierno'
     },
@@ -585,7 +583,7 @@ const PRODUCTS = [
     isBestSeller: false,
     isFeatured: false,
     sizes: ['XS','S','M','L','XL','XXL'],
-    color: 'Multicolor',
+    color: 'Negro',
     material: '95% Algodón Pima, 5% Elastano',
     images:[
       'img/Producto16.1.jpg',
@@ -594,12 +592,11 @@ const PRODUCTS = [
       'img/Producto16.4.jpg'
     ],
     colorHex: '#4a3040',
-    description: 'Top tipo camiseta sin mangas de algodón pima con textura acanalada (rib). Perfecto para el gym o para el día a día. Corte crop ligeramente holgado.',
+    description: 'Camiseta esqueleto (tank top) deportiva en tejido acanalado (ribbed). Presenta un diseño de cuello redondo alto y corte tipo halter en los hombros, ofreciendo una silueta ceñida y cómoda ideal para entrenamientos de gimnasio o uso casual.',
     specs: {
       'Tipo': 'Camiseta sin mangas crop',
-      'Textura': 'Acanalada (Rib)',
+      'Textura': 'Tela elástica (rib texturizado).',
       'Ajuste': 'Slightly oversized',
-      'Largo': 'Crop (hasta ombligo)',
       'Material': 'Algodón Pima premium',
       'Uso ideal': 'Gym, Casual, Loungewear'
     },
@@ -622,7 +619,7 @@ const PRODUCTS = [
     isBestSeller: false,
     isFeatured: false,
     sizes: ['Talla Única'],
-    color: 'Negro / Rosado Dorado',
+    color: 'Negro / Blanco',
     material: 'Nylon 600D resistente al agua',
     images:[
       'img/Producto17.1.jpg',
@@ -631,7 +628,7 @@ const PRODUCTS = [
       'img/Producto17.4.jpg'
     ],
     colorHex: '#1a1a1a',
-    description: 'Mochila deportiva compacta con compartimento para zapatos separado, bolsillo lateral para botella y detalle en correa de color rosado dorado G-FIT.',
+    description: 'Mochila deportiva multifuncional tipo tula con cierre de cordón ajustable. Cuenta con una estructura inteligente que incluye un compartimento inferior independiente con cremallera doble (ideal para tenis o ropa húmeda), bolsillos laterales de malla para botellas y bolsillos exteriores de acceso rápido con cierres de seguridad.',
     specs: {
       'Capacidad': '22 litros',
       'Compartimento zapatos': 'Sí, separado y ventilado',
@@ -659,7 +656,7 @@ const PRODUCTS = [
     isBestSeller: false,
     isFeatured: false,
     sizes: ['XS','S','M','L','XL'],
-    color: 'Crudo / Café',
+    color: 'Negro',
     material: '68% Poliéster, 26% Viscosa, 6% Elastano',
     images:[
       'img/Producto18.1.jpg',
@@ -668,7 +665,7 @@ const PRODUCTS = [
       'img/Producto18.4.jpg'
     ],
     colorHex: '#8B6548',
-    description: 'Legging estilo flare con acampanado en la parte inferior. Diseño boho-sport ideal para yoga, pilates y actividades de bajo impacto. Cintura alta y plisados decorativos.',
+    description: 'Legging deportivo con corte de bota acampanada (flare). Destaca por su pretina alta de diseño cruzado en "V" con un sutil fruncido frontal que estiliza y moldea la zona del abdomen, ofreciendo un estilo moderno que transiciona fácilmente del entrenamiento al uso casual.',
     specs: {
       'Silueta': 'Flare / Acampanado',
       'Cintura': 'Alta con detalle plisado',
@@ -696,7 +693,7 @@ const PRODUCTS = [
     isBestSeller: true,
     isFeatured: false,
     sizes: ['XS','S','M','L','XL'],
-    color: 'Gris Claro / Lavanda',
+    color: 'Negro',
     material: '58% Algodón, 38% Poliéster, 4% Elastano',
     images:[
       'img/Producto19.1.jpg',
@@ -705,10 +702,10 @@ const PRODUCTS = [
       'img/Producto19.4.jpg'
     ],
     colorHex: '#9B6DB5',
-    description: 'Sudadera crop con capucha ligera y acabado suave. Diseño minimalista con logo G-FIT bordado en lavanda. Perfecta para post-workout o loungewear.',
+    description: 'Sudadera corta estilo crop top con capota y cordones de ajuste planos. Presenta mangas largas con puños acanalados y un corte holgado de hombros caídos (drop shoulder), ideal para un estilo deportivo cómodo y casual.',
     specs: {
       'Tipo': 'Crop con capucha',
-      'Logo': 'Bordado en lavanda',
+      'Mangas': 'Largas con hombros caídos y terminación en puños elásticos acanalados.',
       'Bolsillos': 'Canguro frontal',
       'Largo': 'Crop (sobre cintura)',
       'Estilo': 'Minimalista premium',
@@ -734,7 +731,7 @@ const PRODUCTS = [
     isBestSeller: true,
     isFeatured: true,
     sizes: ['XS','S','M','L','XL'],
-    color: 'Negro / Detalles Rose Gold',
+    color: 'Azul turquesa metalizado',
     material: '68% Nylon, 28% Poliéster, 4% Elastano + Hilo metalizado',
     images:[
       'img/Producto20.1.jpg',
@@ -743,11 +740,11 @@ const PRODUCTS = [
       'img/Producto20.4.jpg'
     ],
     colorHex: '#1a0a14',
-    description: 'Conjunto premium de edición especial con hilo metalizado rose gold tejido en la tela. Legging de cintura muy alta con doble capa sculpting y top con soporte alto integrado. La prenda más exclusiva de G-FIT.',
+    description: 'Conjunto deportivo de dos piezas confeccionado en tela de alta compresión con un acabado metalizado de brillo intenso. Incluye un top con espalda de diseño atlético recortado y leggings de tiro alto con pretina ancha que moldea y realza la silueta. La prenda más exclusiva de G-FIT.',
     specs: {
-      'Incluye': 'Legging + Top con soporte integrado',
-      'Detalle': 'Hilo metalizado Rose Gold',
-      'Soporte': 'Alto integrado en top',
+      'Incluye': '2 (Top deportivo + Legging largo).',
+      'Detalle': 'Textura lisa con revestimiento metalizado brillante (glossy effect).',
+      'Soporte': 'Escote redondo con tirantes anchos',
       'Cintura legging': 'Muy alta (28 cm)',
       'Compresión': 'Sculpt máximo',
       'Edición': 'Especial premium'
@@ -917,7 +914,40 @@ function applyFilters() {
 function applyPriceFilter() {
   applyFilters();
 }
+/* ============================================================
+   TOAST NOTIFICATIONS
+============================================================ */
+function showToast(message, type = 'success') {
 
+  const container = document.getElementById('toastContainer');
+
+  if (!container) return;
+
+  const toast = document.createElement('div');
+
+  toast.className = `toast ${type}`;
+
+  toast.textContent = message;
+
+  container.appendChild(toast);
+
+  // Mostrar
+  setTimeout(() => {
+    toast.classList.add('show');
+  }, 10);
+
+  // Eliminar después de 3 segundos
+  setTimeout(() => {
+
+    toast.classList.remove('show');
+
+    setTimeout(() => {
+      toast.remove();
+    }, 300);
+
+  }, 3000);
+
+}
 /* ============================================================
    CLEAR ALL FILTERS
 ============================================================ */
@@ -1415,32 +1445,26 @@ function shareProduct(name) {
 ============================================================ */
 function addToCartFromDetail(productId) {
 
-  if (!selectedSize) {
-    showToast('Por favor selecciona una talla', 'error');
+    console.log("selectedSize =", selectedSize);
 
-    document.getElementById('sizeSelector')?.animate([
-      { transform: 'translateX(-4px)' },
-      { transform: 'translateX(4px)' },
-      { transform: 'translateX(-4px)' },
-      { transform: 'translateX(0)' }
-    ], { duration: 300 });
+    if (!selectedSize) {
 
-    return;
-  }
+        console.log("No hay talla seleccionada");
 
-  const product = PRODUCTS.find(p => p.id === productId);
+        showToast('Por favor selecciona una talla', 'error');
 
-  if (!product) return;
+        return;
+    }
 
-  addToCart(product, selectedSize, currentDetailQty);
+    const product = PRODUCTS.find(p => p.id === productId);
 
-  showToast(
-    `"${product.name}" agregado — Talla ${selectedSize}`,
-    'success'
-  );
+    if (product) {
 
-  // Opcional: cerrar el detalle del producto
-  closeProductDetail();
+        addToCart(product, selectedSize, currentDetailQty);
+
+        showToast(`"${product.name}" agregado al carrito`, 'success');
+
+    }
 }
 
 function buyNow(productId) {
