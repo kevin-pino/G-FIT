@@ -1119,6 +1119,7 @@ function changePage(page) {
 ============================================================ */
 function openProductDetail(productId) {
   const product = PRODUCTS.find(p => p.id === productId);
+  currentProduct = product;
   if (!product) return;
 
   // Reiniciar valores del detalle
@@ -1139,6 +1140,7 @@ function openProductDetail(productId) {
 initDetailTabs();
 initReviewStars();
 updateDetailQty(1);
+updateDetailCartButton(productId);
 
   document.getElementById("detailQty").textContent = currentDetailQty;
 }
@@ -1245,17 +1247,18 @@ function renderProductDetail(product) {
 
         <!-- Actions -->
         <div class="detail-actions">
-          <button class="detail-buy-btn" onclick="buyNow(${product.id})" aria-label="Comprar ahora">⚡ Comprar Ahora</button>
-          <button class="detail-cart-btn" onclick="addToCartFromDetail(${product.id})" aria-label="Agregar al carrito">🛒 Agregar al Carrito</button>
-          <div class="detail-secondary-actions">
-            <button class="detail-fav-btn" onclick="toggleFavorite(${product.id}, this)" aria-label="Agregar a favoritos">
-              ♡ Favoritos
-            </button>
-            <button class="detail-share-btn" onclick="shareProduct('${product.name}')" aria-label="Compartir producto">
-              ↗ Compartir
-            </button>
-          </div>
-        </div>
+          <button class="detail-buy-btn"
+          onclick="buyNow(${product.id})"
+          aria-label="Comprar ahora">
+          ⚡ Comprar Ahora
+          </button>
+          <button class="detail-cart-btn"
+          id="detailCartBtn"
+          onclick="addToCartFromDetail(${product.id})"
+          aria-label="Agregar al carrito">
+          🛒 Agregar al Carrito
+          </button>
+        <div class="detail-secondary-actions">
 
         <!-- Tabs -->
         <div class="detail-tabs">
@@ -1347,9 +1350,11 @@ function changeDetailQty(delta) {
   const newVal = currentDetailQty + delta;
   if (newVal < 1) return;
   updateDetailQty(newVal);
+  updateDetailCartButton(currentProduct.id);
 }
 
 let selectedSize = null;
+let currentProduct = null;
 
 function selectSize(btn) {
   document.querySelectorAll('.size-option')
@@ -1360,6 +1365,9 @@ function selectSize(btn) {
   selectedSize = btn.dataset.size;
 
   console.log("Talla seleccionada:", selectedSize);
+  const productId = currentProduct.id;
+
+updateDetailCartButton(productId);
 }
 
 function showTab(tabId) {
@@ -1439,6 +1447,69 @@ function shareProduct(name) {
     showToast('Enlace copiado al portapapeles', 'info');
   }
 }
+// funcion de producto agregado
+function isProductInCart(productId, size) {
+
+  const cart = getCart();
+
+  return cart.some(
+    item =>
+      item.id === productId &&
+      item.size === size
+  );
+}
+function getCartItem(productId, size) {
+
+  const cart = getCart();
+
+  return cart.find(
+    item => item.id === productId && item.size === size
+  );
+
+}
+// actualizacion del estatado de agregado del boton del carrito
+function updateDetailCartButton(productId) {
+
+  const btn = document.getElementById("detailCartBtn");
+
+  if (!btn) return;
+
+  if (!selectedSize) {
+
+    btn.innerHTML = "🛒 Agregar al carrito";
+    btn.style.background = "";
+
+    return;
+
+  }
+
+  const cartItem = getCartItem(productId, selectedSize);
+
+  // No existe en el carrito
+  if (!cartItem) {
+
+    btn.innerHTML = "🛒 Agregar al carrito";
+    btn.style.background = "";
+
+  }
+
+  // Ya existe y la cantidad coincide
+  else if (cartItem.quantity === currentDetailQty) {
+
+    btn.innerHTML = "✓ Agregado";
+    btn.style.background = "#27ae60";
+    btn.style.color = "#fff";
+  }
+
+  // Ya existe pero cambió la cantidad
+  else {
+
+    btn.innerHTML = "🔄 Actualizar pedido";
+    btn.style.background = "#f39c12";
+    btn.style.color = "#fff";
+  }
+
+}
 
 /* ============================================================
    ADD TO CART FROM DETAIL
@@ -1458,13 +1529,45 @@ function addToCartFromDetail(productId) {
 
     const product = PRODUCTS.find(p => p.id === productId);
 
-    if (product) {
+    if (!product) return;
 
+
+    // Buscar si ya existe ese producto con esa talla
+    const cart = getCart();
+
+    const existingItem = cart.find(
+        item =>
+            item.id === productId &&
+            item.size === selectedSize
+    );
+
+
+    if (existingItem) {
+
+        // Actualizar cantidad
+        existingItem.quantity = currentDetailQty;
+
+        saveCart(cart);
+
+        updateCartBadge();
+
+        renderCart();
+
+        showToast("Pedido actualizado 🔄", "success");
+
+    } else {
+
+        // Agregar nuevo producto
         addToCart(product, selectedSize, currentDetailQty);
 
-        showToast(`"${product.name}" agregado al carrito`, 'success');
+        showToast(`"${product.name}" agregado al carrito`, "success");
 
     }
+
+
+    // Actualizar el aspecto del botón
+    updateDetailCartButton(productId);
+
 }
 
 function buyNow(productId) {
@@ -1479,6 +1582,31 @@ function buyNow(productId) {
 
 function quickAddToCart(productId) {
   const product = PRODUCTS.find(p => p.id === productId);
+  const cart = getCart();
+
+const existingItem = cart.find(
+  item =>
+    item.id === productId &&
+    item.size === selectedSize
+);
+
+if (existingItem) {
+
+  existingItem.quantity = currentDetailQty;
+
+  saveCart(cart);
+  updateCartBadge();
+  renderCart();
+
+  showToast("Pedido actualizado 🔄", "success");
+
+} else {
+
+  addToCart(product, selectedSize, currentDetailQty);
+
+  showToast(`"${product.name}" agregado al carrito`, "success");
+
+}
 
   if (product) {
 
